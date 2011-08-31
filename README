@@ -1,0 +1,67 @@
+MANUAL COMANDOS GITHUB
+
+git config --global user.name ""
+git config --global user.email ""
+git config --global github.user 
+git config --global github.token 
+git init
+cd .git
+git clone git@github.com:usilsoft/Pagina-Web.git
+dir
+
+
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+git config --global push.default "tracking"
+git config --global pack.threads "0"
+git config --global core.autocrlf false
+git config --global apply.whitespace nowarn
+git config --global color.ui "auto"
+git config --global core.excludesfile "~/.gitignore"
+git config --global alias.up "pull --rebase"
+
+				Funciones básicas con git
+
+git clone 
+clona un sistema de ficheros remoto. Esto solo hay que hacerlo al principio de trabajar con un repositorio
+
+git status 
+estado actual de nuestro repositorio
+
+git commit -a -m <mensaje de log> 
+Añade todos (-a) los ficheros nuevos o cambiados, al repositorio local. Este comando equivale a git add; git commit combinados
+
+git push 
+sube los cambios locales al servidor
+
+git pull 
+obtiene y mezcla los cambios desde el servidor. Equivale a los dos próximos comandos, cuando se utiliza una sola rama de desarrollo (como es nuestro caso)
+
+git fetch 
+obtiene cambios desde Internet. (opcionalmente) git diff ... origin para ver las diferencias entre el local y el remoto
+
+git merge 
+mezcla los cambios bajados con los locales
+	
+				Proceso normal diario
+
+Estaremos siempre trabajando en el directorio de traducción. Allí podremos tener todos los archivos y programas que queramos. Otro directorio será el del repositorio
+Cuando deseemos subir nuevos ficheros o cambios a github, copiamos los ficheros desde el directorio de traducción al del repositorio git local. Podemos usar el comando cp o un script que automatice este proceso
+Nos pasamos al repositorio git local y hacemos
+
+git status
+para comprobar que no hay nada pendiente
+
+git pull
+para bajarse los últimos cambios desde el remoto
+
+Ahora agregamos los ficheros nuevos o modificados que copiamos antes:
+git commit -a -m <mensaje de log> 
+para agregar todos los cambios bajo un mismo commit. O, de otra manera:
+hacer git add y luego git commit por cada fichero
+
+Finalmente,
+git push 
+para subir los cambios al repositorio
+
+Siempre trabajaremos con una sola rama de desarrollo (la "master"), y contra un único repositorio de trabajo ("origin", el repositorio en github.com).
